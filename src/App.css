@@ -5,6 +5,11 @@
     margin: 0; 
 }
 
+.WeatherCard{
+    border: 1px solid black; 
+    border-radius: 8px;
+}
+
 .WeatherImageWrapper{
     display: flex; 
     justify-content: center;
