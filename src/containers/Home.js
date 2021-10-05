@@ -2,8 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from 'axios'; 
 import { useLocation } from "react-router-dom"
 import WeatherCard from "../components/WeatherCard";
-
-const API_KEY = '26e334eb703ffb64bb31de818ff71410'; 
+import {API_KEY} from "../components/API_KEY";
 
 function useQuery(){
     return new URLSearchParams(useLocation().search)
