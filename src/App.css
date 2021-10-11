@@ -1,19 +1,45 @@
+html{
+    background-image: url(../src/weather.gif);
+}
+
 .CurrentTemperature{
+    display: flex;
     font-size: 96px;
     font-weight: bold; 
     font-family: serif; 
     margin: 0; 
+    justify-content: center;
+}
+
+.Subheader{
+    display: flex;
+    font-size: 38px;
+    justify-content: center;
+}
+
+.CurrentTemperatureWrapper{
+    display: flex; 
+    flex-direction: column;
+    justify-content: right;
 }
 
 .WeatherCard{
     border: 1px solid black; 
     border-radius: 8px;
+    margin-left: 80px; 
+    margin-right: 80px;
+    padding-left: 20px; 
+}
+
+.WeatherCard:hover{
+    border: 4px solid black; 
 }
 
 .WeatherImageWrapper{
     display: flex; 
-    justify-content: center;
-    font-size: 36px; 
+    justify-content: left;
+    font-size: 96px; 
+    filter: invert();
 
 }
 
@@ -23,10 +49,34 @@
 }
 
 .Navigation a{
-  margin: 20px; 
-  font-size:24px;
+  background-color: aliceblue;
+  border: solid 1px ; 
+  border-radius: 24px;
+  color: black;
+  margin-left: 20px; 
+  font-size:22px; 
+  padding: 9px; 
 }
 
 .Navigation a.Active{
     color: purple; 
+    background-color:rgba(240, 248, 255, 0.5);
+}
+
+@media (min-width: 600px) {
+    .WeatherCard {
+        flex-direction: row; 
+    }
+
+    .City {
+        font-size: 74px; 
+        margin-left: 80px;
+        margin-top: 0; 
+        text-transform: capitalize;
+    }
+}
+
+.Subtexts {
+    margin-left: 20px; 
+    margin-bottom: 40px; 
 }

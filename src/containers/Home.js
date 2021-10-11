@@ -43,6 +43,7 @@ function Home(){
         windSpeed, 
     } = useMemo(() => {
         if(!weatherData) return{};
+
     return {
         cloudiness: weatherData.clouds.all, 
         currentTemp: Math.round(weatherData.main.temp), 
@@ -52,7 +53,10 @@ function Home(){
         weatherType: weatherData.weather[0].main,
         windSpeed: weatherData.wind.speed,
     }
-}, [])
+}, [weatherData])
+
+
+
     return(
         <main className="App">
             <header>
@@ -63,16 +67,21 @@ function Home(){
                     <a href="/?city=shanghai" className={city === "shanghai" && "Active"}>Shanghai</a>
                 </nav>
             </header>
-            <WeatherCard 
-                cloudiness={cloudiness}
-                currentTemp={currentTemp}
-                highTemp={highTemp}
-                humidity={humidity}
-                lowTemp={lowTemp}
-                weatherType={weatherType}
-                windSpeed={windSpeed}
+            {city && (
+                <>
+                <h1 className="City">{city}</h1>
+                <WeatherCard 
+                    cloudiness={cloudiness}
+                    currentTemp={currentTemp}
+                    highTemp={highTemp}
+                    humidity={humidity}
+                    lowTemp={lowTemp}
+                    weatherType={weatherType}
+                    windSpeed={windSpeed}
 
-            />
+                />
+                </>
+            )}
         </main>
     )
 }
